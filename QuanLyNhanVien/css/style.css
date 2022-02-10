@@ -1,0 +1,56 @@
+.app {
+  background-color: aqua;
+  padding: 100px 0;
+}
+
+.app__wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.app__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding: 20px;
+}
+
+.app__top h2 {
+  color: blue;
+}
+
+.app__center {
+  padding: 20px;
+}
+
+.app__center .form-inline {
+  display: flex;
+}
+
+.form-inline input {
+  flex: 1;
+}
+
+.mess-mnv,
+.mess-chucVu,
+.mess-date,
+.mess-hoTen,
+.mess-email,
+.mess-mnv-edit,
+.mess-chucVu-edit,
+.mess-date-edit,
+.mess-hoTen-edit,
+.mess-email-edit {
+  color: red;
+}
+
+.mess-sucess,
+.mess-sucess-edit {
+  color: blue;
+}
+
+thead th {
+  color: blue;
+}
