@@ -136,12 +136,14 @@ function clearMessAll() {
 // Xóa nhân viên
 function deleteNv() {
   const deleteBtnAll = document.querySelectorAll(".delete");
+  const searchInput = document.querySelector("#searchInput");
   deleteBtnAll.forEach((item, index) => {
     item.onclick = () => {
       nhanVienList.splice(index, 1);
       renderInfo();
       deleteNv();
       showEditNv();
+      searchInput.value = ``;
       localStorage.setItem("nvList", JSON.stringify(nhanVienList));
     };
   });
@@ -173,7 +175,6 @@ function saveEditNv(index) {
   const saveBtn = document.querySelector(".save-btn");
   if (saveBtn) {
     saveBtn.onclick = () => {
-      console.log(index);
       const messSuccessEdit = document.querySelector(".mess-sucess-edit");
       const searchInput = document.querySelector("#searchInput");
       const maNv = document.querySelector("#mnv-edit").value;
@@ -203,6 +204,7 @@ function saveEditNv(index) {
   }
 }
 
+// tim kiem nv bang ten
 function searchNvByName() {
   const searchBtn = document.querySelector(".search");
   searchBtn.onclick = () => {
@@ -215,7 +217,6 @@ function searchNvByName() {
     const indexSearch = [];
     nhanVienList.forEach((item, index) => {
       const { hoTen } = item;
-      console.log(hoTen);
       if (hoTen.includes(valueSearch)) {
         indexSearch.push(index);
       }
